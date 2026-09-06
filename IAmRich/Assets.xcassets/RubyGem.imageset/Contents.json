@@ -1,1 +1,23 @@
-IAmRich/Assets.xcassets/Contents.json
+{
+  "images" : [
+    {
+      "filename" : "RubyGem.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "RubyGem.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "RubyGem.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
