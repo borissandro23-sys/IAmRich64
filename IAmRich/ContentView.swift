@@ -35,7 +35,7 @@ struct FrontView: View {
                         Spacer()
                         Text("IAmRich")
                             .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.white)ф
+                            .foregroundStyle(.white)
                         Spacer()
                     }
                     .overlay(alignment: .trailing) {
