@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Front = text screen ("IAmRich" nav bar). Back = glowing gem screen.
-    @State private var showBack = false
+    @State private var showBack = true
 
     var body: some View {
         ZStack {
@@ -35,7 +35,7 @@ struct FrontView: View {
                         Spacer()
                         Text("IAmRich")
                             .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.white)ф
                         Spacer()
                     }
                     .overlay(alignment: .trailing) {
