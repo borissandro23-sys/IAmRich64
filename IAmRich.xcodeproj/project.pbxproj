@@ -1,0 +1,269 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B253CB1E5B0DE99761C53BCA /* IAmRichApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58032AD514DEB6A4CB0A8BC8 /* IAmRichApp.swift */; };
+		FD75F91560FCB6634E298C7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877CE2A18F2F32F2E5C99AC /* ContentView.swift */; };
+		40D0C96741DF4C5B9567DCED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3910DFD1B6369840603C3418 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		48BEC1FEB1DEE6164AB8F8EC /* IAmRich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAmRich.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58032AD514DEB6A4CB0A8BC8 /* IAmRichApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAmRichApp.swift; sourceTree = "<group>"; };
+		3877CE2A18F2F32F2E5C99AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3910DFD1B6369840603C3418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		692EFC112B518EE97CE410E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		813F2D1D3A74F2EF09253553 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC3C31CC1E7ECBD398A84FB5 = {
+			isa = PBXGroup;
+			children = (
+				1D8F4966456D25C7DF76FF68 /* IAmRich */,
+				078B1CC6D9B2D43E6E046A47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D8F4966456D25C7DF76FF68 /* IAmRich */ = {
+			isa = PBXGroup;
+			children = (
+				58032AD514DEB6A4CB0A8BC8 /* IAmRichApp.swift */,
+				3877CE2A18F2F32F2E5C99AC /* ContentView.swift */,
+				3910DFD1B6369840603C3418 /* Assets.xcassets */,
+				692EFC112B518EE97CE410E4 /* Info.plist */,
+			);
+			path = IAmRich;
+			sourceTree = "<group>";
+		};
+		078B1CC6D9B2D43E6E046A47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48BEC1FEB1DEE6164AB8F8EC /* IAmRich.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DF0C1C8916EA9EFAD730BCC /* IAmRich */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356F970566316DA4C86430FF /* Build configuration list for PBXNativeTarget "IAmRich" */;
+			buildPhases = (
+				B9AD62461FAD76ED83C4C356 /* Sources */,
+				CA0FCA0B7462B02D13FA54D4 /* Resources */,
+				813F2D1D3A74F2EF09253553 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IAmRich;
+			productName = IAmRich;
+			productReference = 48BEC1FEB1DEE6164AB8F8EC /* IAmRich.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D8D1C1E2B7FE3E15948EAA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					1DF0C1C8916EA9EFAD730BCC = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = F9B00294E6AE05B9669F816A /* Build configuration list for PBXProject "IAmRich" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC3C31CC1E7ECBD398A84FB5;
+			productRefGroup = 078B1CC6D9B2D43E6E046A47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DF0C1C8916EA9EFAD730BCC /* IAmRich */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA0FCA0B7462B02D13FA54D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D0C96741DF4C5B9567DCED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9AD62461FAD76ED83C4C356 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B253CB1E5B0DE99761C53BCA /* IAmRichApp.swift in Sources */,
+				FD75F91560FCB6634E298C7B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B67237C005E3D81A697C79B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		434AF1304F845EE08DC4C1F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3A325B4633BE57135321033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IAmRich/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.IAmRich";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F87B3B374A71F0691B98121D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IAmRich/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.IAmRich";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9B00294E6AE05B9669F816A /* Build configuration list for PBXProject "IAmRich" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B67237C005E3D81A697C79B9 /* Debug */,
+				434AF1304F845EE08DC4C1F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356F970566316DA4C86430FF /* Build configuration list for PBXNativeTarget "IAmRich" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A325B4633BE57135321033 /* Debug */,
+				F87B3B374A71F0691B98121D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D8D1C1E2B7FE3E15948EAA8 /* Project object */;
+}
