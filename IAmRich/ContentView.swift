@@ -1,47 +1,111 @@
+```swift
 //
 //  ContentView.swift
 //  IAmRich
 //
-//  Tap the (i) button to flip the view, just like the original
-//  UIKit app's MainView / FlipsideView pair.
+//  Real 3D flip animation, inspired by the original
+//  UIKit I Am Rich MainView / FlipsideView.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     @State private var showBack = false
+    @State private var showDone = false
+
+    private let flipDuration = 0.7
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-
-            Image(showBack ? "BackImage" : "RichImage")
-                .resizable()
-                .scaledToFit()
+            Color.black
                 .ignoresSafeArea()
-                .transition(.asymmetric(
-                    insertion: .move(edge: .trailing),
-                    removal: .move(edge: .leading)
-                ))
-                .id(showBack)
 
-            VStack {
-                Spacer()
-                HStack {
+            // MARK: - Front
+            ZStack {
+                Image("RichImage")
+                    .resizable()
+                    .scaledToFit()
+                    .ignoresSafeArea()
+
+                VStack {
                     Spacer()
-                    Button {
-                        withAnimation(.easeInOut(duration: 0.6)) {
-                            showBack.toggle()
+
+                    HStack {
+                        Spacer()
+
+                        Button {
+                            showDone = false
+
+                            withAnimation(.easeInOut(duration: flipDuration)) {
+                                showBack = true
+                            }
+
+                            // Показываем Done после того,
+                            // как карточка прошла середину переворота.
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + flipDuration / 2
+                            ) {
+                                withAnimation(.easeInOut(duration: 0.15)) {
+                                    showDone = true
+                                }
+                            }
+                        } label: {
+                            Text("(i)")
+                                .font(.system(size: 16, weight: .regular))
+                                .foregroundStyle(.white)
+                                .frame(width: 18, height: 19)
                         }
-                    } label: {
-                        Image(systemName: "info.circle.fill")
-                            .font(.system(size: 32))
-                            .foregroundStyle(.white.opacity(0.85))
-                            .shadow(radius: 4)
+                        .padding(.trailing, 10)
+                        .padding(.bottom, 10)
                     }
-                    .padding()
                 }
             }
+            .rotation3DEffect(
+                .degrees(showBack ? -180 : 0),
+                axis: (x: 0, y: 1, z: 0),
+                perspective: 0.7
+            )
+            .opacity(showBack ? 0 : 1)
+
+            // MARK: - Back
+            ZStack {
+                Image("BackImage")
+                    .resizable()
+                    .scaledToFit()
+                    .ignoresSafeArea()
+
+                VStack {
+                    HStack {
+                        Spacer()
+
+                        Button {
+                            // Done исчезает сразу при начале
+                            // обратного переворота.
+                            showDone = false
+
+                            withAnimation(.easeInOut(duration: flipDuration)) {
+                                showBack = false
+                            }
+                        } label: {
+                            Text("Done")
+                                .font(.system(size: 17))
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                        }
+                        .opacity(showDone ? 1 : 0)
+                        .allowsHitTesting(showDone)
+                    }
+
+                    Spacer()
+                }
+            }
+            .rotation3DEffect(
+                .degrees(showBack ? 0 : 180),
+                axis: (x: 0, y: 1, z: 0),
+                perspective: 0.7
+            )
+            .opacity(showBack ? 1 : 0)
         }
         .statusBarHidden()
     }
