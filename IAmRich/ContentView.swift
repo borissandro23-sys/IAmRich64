@@ -4,7 +4,6 @@ struct ContentView: View {
 @State private var showBack = false
 @State private var showDone = false
 
-```
 private let flipDuration = 0.7
 
 var body: some View {
@@ -91,7 +90,6 @@ var body: some View {
     }
     .statusBarHidden()
 }
-```
 
 }
 
