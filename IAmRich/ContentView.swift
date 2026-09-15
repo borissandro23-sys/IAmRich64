@@ -1,12 +1,4 @@
 ```swift
-//
-//  ContentView.swift
-//  IAmRich
-//
-//  Real 3D flip animation, inspired by the original
-//  UIKit I Am Rich MainView / FlipsideView.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -21,6 +13,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
 
             // MARK: - Front
+
             ZStack {
                 Image("RichImage")
                     .resizable()
@@ -40,8 +33,6 @@ struct ContentView: View {
                                 showBack = true
                             }
 
-                            // Показываем Done после того,
-                            // как карточка прошла середину переворота.
                             DispatchQueue.main.asyncAfter(
                                 deadline: .now() + flipDuration / 2
                             ) {
@@ -51,7 +42,7 @@ struct ContentView: View {
                             }
                         } label: {
                             Text("(i)")
-                                .font(.system(size: 16, weight: .regular))
+                                .font(.system(size: 16))
                                 .foregroundStyle(.white)
                                 .frame(width: 18, height: 19)
                         }
@@ -68,6 +59,7 @@ struct ContentView: View {
             .opacity(showBack ? 0 : 1)
 
             // MARK: - Back
+
             ZStack {
                 Image("BackImage")
                     .resizable()
@@ -79,8 +71,6 @@ struct ContentView: View {
                         Spacer()
 
                         Button {
-                            // Done исчезает сразу при начале
-                            // обратного переворота.
                             showDone = false
 
                             withAnimation(.easeInOut(duration: flipDuration)) {
