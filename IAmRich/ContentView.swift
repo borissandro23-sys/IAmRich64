@@ -1,105 +1,100 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showBack = false
-    @State private var showDone = false
+@State private var showBack = false
+@State private var showDone = false
 
-    private let flipDuration = 0.7
+```
+private let flipDuration = 0.7
 
-    var body: some View {
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
+var body: some View {
+    ZStack {
+        Color.black
+            .ignoresSafeArea()
 
-            // MARK: - Front
+        // MARK: - Front / Back
 
-            ZStack {
-                Image("RichImage")
-                    .resizable()
-                    .scaledToFit()
-                    .ignoresSafeArea()
-
-                VStack {
-                    Spacer()
-
-                    HStack {
-                        Spacer()
-
-                        Button {
-                            showDone = false
-
-                            withAnimation(.easeInOut(duration: flipDuration)) {
-                                showBack = true
-                            }
-
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + flipDuration / 2
-                            ) {
-                                withAnimation(.easeInOut(duration: 0.15)) {
-                                    showDone = true
-                                }
-                            }
-                        } label: {
-                            Text("(i)")
-                                .font(.system(size: 16))
-                                .foregroundStyle(.white)
-                                .frame(width: 18, height: 19)
-                        }
-                        .padding(.trailing, 10)
-                        .padding(.bottom, 10)
-                    }
-                }
-            }
+        Image(showBack ? "BackImage" : "RichImage")
+            .resizable()
+            .scaledToFit()
+            .ignoresSafeArea()
             .rotation3DEffect(
-                .degrees(showBack ? -180 : 0),
+                .degrees(showBack ? 180 : 0),
                 axis: (x: 0, y: 1, z: 0),
                 perspective: 0.7
             )
-            .opacity(showBack ? 0 : 1)
+            .animation(
+                .easeInOut(duration: flipDuration),
+                value: showBack
+            )
 
-            // MARK: - Back
+        // MARK: - Front (i) button
 
-            ZStack {
-                Image("BackImage")
-                    .resizable()
-                    .scaledToFit()
-                    .ignoresSafeArea()
+        if !showBack {
+            VStack {
+                Spacer()
 
-                VStack {
-                    HStack {
-                        Spacer()
-
-                        Button {
-                            showDone = false
-
-                            withAnimation(.easeInOut(duration: flipDuration)) {
-                                showBack = false
-                            }
-                        } label: {
-                            Text("Done")
-                                .font(.system(size: 17))
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                        }
-                        .opacity(showDone ? 1 : 0)
-                        .allowsHitTesting(showDone)
-                    }
-
+                HStack {
                     Spacer()
+
+                    Button {
+                        showDone = false
+
+                        withAnimation(.easeInOut(duration: flipDuration)) {
+                            showBack = true
+                        }
+
+                        DispatchQueue.main.asyncAfter(
+                            deadline: .now() + flipDuration / 2
+                        ) {
+                            withAnimation(.easeInOut(duration: 0.15)) {
+                                showDone = true
+                            }
+                        }
+                    } label: {
+                        Text("ⓘ")
+                            .font(.system(size: 18))
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 18, height: 19)
+                    .padding(.trailing, 28)
+                    .padding(.bottom, 47)
                 }
             }
-            .rotation3DEffect(
-                .degrees(showBack ? 0 : 180),
-                axis: (x: 0, y: 1, z: 0),
-                perspective: 0.7
-            )
-            .opacity(showBack ? 1 : 0)
         }
-        .statusBarHidden()
+
+        // MARK: - Back "Done" button
+
+        if showBack {
+            VStack {
+                HStack {
+                    Spacer()
+
+                    Button("Done") {
+                        showDone = false
+
+                        withAnimation(.easeInOut(duration: flipDuration)) {
+                            showBack = false
+                        }
+                    }
+                    .font(.system(size: 17))
+                    .foregroundStyle(.white)
+                    .opacity(showDone ? 1 : 0)
+                    .allowsHitTesting(showDone)
+                    .padding(.top, 8)
+                    .padding(.trailing, 12)
+                }
+
+                Spacer()
+            }
+        }
     }
+    .statusBarHidden()
+}
+```
+
 }
 
 #Preview {
-    ContentView()
+ContentView()
 }
