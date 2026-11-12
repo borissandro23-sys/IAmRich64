@@ -10,19 +10,17 @@ jobs:
     runs-on: macos-15-intel
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Select Xcode
         run: |
           set -e
-          if [ -d "/Applications/Xcode_16.app" ]; then
-            sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
-          elif [ -d "/Applications/Xcode_15.4.app" ]; then
-            sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
-          elif [ -d "/Applications/Xcode_15.3.app" ]; then
-            sudo xcode-select -s /Applications/Xcode_15.3.app/Contents/Developer
+          if [ -d "/Applications/Xcode_16.4.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
           else
-            sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+            echo "Xcode 16.4 not found on this runner"
+            ls -d /Applications/Xcode*.app || true
+            exit 1
           fi
           echo "Selected Xcode:"
           xcodebuild -version
@@ -83,7 +81,7 @@ jobs:
           unzip -l IAmRich.ipa | head -40
 
       - name: Upload IPA artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: IAmRich-ipa
           path: IAmRich.ipa
