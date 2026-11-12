@@ -18,7 +18,7 @@ class FlipsideViewController: UIViewController {
         navBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(navBar)
 
-        let navItem = UINavigationItem(title: "")
+        let navItem = UINavigationItem(title: "I Am Rich")
         navItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
